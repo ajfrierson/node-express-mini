@@ -109,3 +109,82 @@ server.put('/api/users/:id', (req, res) => {
 })
 
 server.listen(3000, () => console.log('App is listening...'));
+
+// const express = require('express');
+
+// const server = express();
+// server.use(express.json());
+
+// let hobbits = [
+//   {
+//     id: 1,
+//     name: 'Bilbo Baggins',
+//     age: 111,
+//   },
+//   {
+//     id: 2,
+//     name: 'Frodo Baggins',
+//     age: 33,
+//   },
+// ];
+// let nextId = 3;
+
+// //post endpoint
+// server.post('/hobbits', (req, res) => {
+//   const hobbit = req.body;
+//   hobbit.id = nextId++;
+
+//   hobbits.push(hobbits);
+
+//   res.status(201).json(hobbits);
+// });
+
+// //get endpoint
+// server.get('/', (req, res) => {
+//   res.send('Hello World!');
+// });
+// //delete endpoint
+// server.delete('/hobbits:id', (req, res) => {
+//   const id = req.params.id;
+//   res.status(200).json({
+//     url: `/hobbits/${id}`,
+//     operation:  `DELETE for hobbit with id ${id}`,
+//   });
+// });
+
+// server.put('/hobbits/:id', (req, res) => {
+//   res.status(200).json({url: '/hobbits', operation: 'PUT'});
+//   const hobbit = hobbits.find(h => h.id == req.params.id);
+
+//   if(!hobbit) {
+//     res.status(404).json({message: 'Hobbit does not exist'});
+//   } else {
+//     Object.assign(hobbit, req.body);
+//     res.status(200).json(hobbit);
+//   }
+
+// });
+
+// //get endpoint with sorting capabilities
+// server.get('/hobbits', (req, res) => {
+// const sortField = req.query.sortby || 'id';
+// const hobbits = [
+//   {
+//     id: 1,
+//     name: 'Samwise Gamgee',
+//   },
+//   {
+//     id: 2,
+//     name: 'Frodo Baggins',
+//   },
+// ];
+
+// //apply sorting
+// const response = hobbits.sort((a, b) => (a[sortField] < b[sortField] ? -1 : 1)
+// );
+
+//   res.status(200).json(hobbits);
+// });
+
+
+// server.listen(8000, () => console.log('API is running on port 8000'));
